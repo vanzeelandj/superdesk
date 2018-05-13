@@ -6,7 +6,13 @@
  */
 module.exports = function(grunt) {
     return {
-        apps: ['superdesk-analytics'],
+        apps: [
+            'superdesk.analytics'
+        ],
+        importApps: [
+            'superdesk-analytics',
+            'superdesk-publisher'
+        ],
         defaultRoute: '/workspace/personal',
         validatorMediaMetadata: {
             headline: {
@@ -32,6 +38,13 @@ module.exports = function(grunt) {
             }
         },
 
+        publisher: {
+            protocol: 'https',
+            tenant: process.env.PUBLISHER_API_SUBDOMAIN || '',
+            domain: process.env.PUBLISHER_API_DOMAIN || 'localhost',
+            base: 'api/v1'
+        },
+
         langOverride: {
             'en': {
                 'ANPA Category': 'Category',
@@ -40,8 +53,10 @@ module.exports = function(grunt) {
         },
 
         features: {
+            preview: 1,
             swimlane: {columnsLimit: 4},
-            editor3: true
+            editor3: true,
+            editorHighlights: true
         },
         workspace: {
             analytics: true
