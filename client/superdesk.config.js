@@ -9,34 +9,13 @@ module.exports = function(grunt) {
         apps: [
             'superdesk.analytics'
         ],
+
         importApps: [
             'superdesk-analytics',
             'superdesk-publisher'
         ],
+
         defaultRoute: '/workspace/personal',
-        validatorMediaMetadata: {
-            headline: {
-                required: true
-            },
-            alt_text: {
-                required: true
-            },
-            description_text: {
-                required: true
-            },
-            copyrightholder: {
-                required: false
-            },
-            byline: {
-                required: false
-            },
-            usageterms: {
-                required: false
-            },
-            copyrightnotice: {
-                required: false
-            }
-        },
 
         publisher: {
             protocol: 'https',
@@ -52,12 +31,18 @@ module.exports = function(grunt) {
             }
         },
 
+        view: {
+            timeformat: 'HH:mm',
+            dateformat: 'DD.MM.YYYY',
+        },
+
         features: {
             preview: 1,
             swimlane: {columnsLimit: 4},
             editor3: true,
-            editorHighlights: true
+            editorHighlights: true,
         },
+
         workspace: {
             analytics: true
         }
