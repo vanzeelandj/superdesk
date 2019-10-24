@@ -38,11 +38,16 @@ module.exports = function(grunt) {
             preview: 1,
             swimlane: {defaultNumberOfColumns: 4},
             editor3: true,
-            validatePointOfInterestForImages: false,
+            validatePointOfInterestForImages: true,
             editorHighlights: true
         },
         workspace: {
             analytics: true
-        }
+        },
+        enabledExtensions: {
+            // extensionFolderName: 1,
+            annotationsLibrary: 1,
+            markForUser: 1,
+        },
     };
 };
